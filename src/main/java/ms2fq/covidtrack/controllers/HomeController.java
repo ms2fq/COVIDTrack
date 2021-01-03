@@ -20,8 +20,10 @@ public class HomeController {
     public String home(Model model) {
         List<LocationStats> statsList = cvds.getStatsList();
         int trc = statsList.stream().mapToInt(stat -> stat.getLatestTotal()).sum();
+        int tnc = statsList.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
         model.addAttribute("locationStats", statsList);
         model.addAttribute("totalReportedCases", trc);
+        model.addAttribute("totalNewCases", tnc);
         return "home";
     }
 }
