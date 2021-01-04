@@ -2,7 +2,15 @@ package ms2fq.covidtrack.models;
 
 public class LocationStats {
     private String county, state;
-    private int latestTotal;
+    private int latestTotal, diffFromPrevDay;
+
+    public int getDiffFromPrevDay() {
+        return diffFromPrevDay;
+    }
+
+    public void setDiffFromPrevDay(int diffFromPrevDay) {
+        this.diffFromPrevDay = diffFromPrevDay;
+    }
 
     public String getCounty() {
         return county;
